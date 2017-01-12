@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">        <!---ng-app 模块名称设定-->
+<head>
+    <meta charset="utf-8">   <!--字符编码集为UTF-8 -->
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script><!--加载angular.Js-->
+</head>
+<body ng-controller="code2Controller"> <!-- 定义控制器-->
+<div ng-repeat="item in items">
+    <span >商品名：{{item.title|currency}}</span><br/>
+    <span >数量：{{item.quantity|currency}}</span><br/>
+    <span >单价：{{item.price|currency}}</span><br/>
+
+
+
+
+
+
+
+</div>
+</body>
+
+
+
+
+<!--JS -->
+<script>
+    var myAPPModule=angular.module('myApp', []);<!--创建一个模块 -->
+    myAPPModule.controller('code2Controller',function($scope) {  <!-- 控制器函数‘textController'传递给模块-->
+        $scppe.bill={};
+        $scope.items=[
+            {},
+            {title:'angular' ,quantity:1,price:10},
+            {title:'Ionic' ,quantity:2,price:10},
+            {title:'java' ,quantity:3,price:10},
+        ];
+//        总价
+        $scope.totalCart=function(){
+            var totalCart=0;
+            for(var i= 0,len=$scope.items.length; i<len;i++){
+                totalCart=totalCart+$scope.items[i].price*$scope.items[i].quantity;
+            }
+            return totalCart;
+        }
+//        超过100给10美元优惠
+        function calcuateDiscount(newValue,oldValue,scope){
+            $scope.bill.discount=newValue>100?10:0;
+        }
+//       实际付款
+        $scope.subtotal=function(){
+            return $scope.totalCart()-$scope.bill.discount;
+        }
+//        监视
+        $scope.watch($scope.totalCart(),calcuateDiscount);
+
+    });
+        </script>
+</html>

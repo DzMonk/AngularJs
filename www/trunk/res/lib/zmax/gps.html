@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <script src="Gps.js"></script>
+ <body>
+  <script>
+      var lng=120.14886253204442;
+      var lat=30.289775387295726;
+      document.write("GPS: "+lng+","+lat+"<br />");
+      var arr2 = GPS.gcj_encrypt(lng,lat);
+      document.write("中国:" + arr2['lng']+","+arr2['lat']+'<br />');
+      var arr3 = GPS.gcj_decrypt_exact(arr2['lng'],arr2['lat']);
+      document.write('逆算:('+lng+','+lat+')<br/>结果:=' + arr3['lng']+","+arr3['lat']+' 需要和第一行相似（目前是小数点后9位相等）');
+  </script>
+ </body>
+</html>

@@ -1,0 +1,21 @@
+1: <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+注明：
+ width - viewport的宽度   height - viewport的高度-->声明viewport，就可以避免像素密度的问题
+ initial-scale - 初始的缩放比例
+ minimum-scale - 允许用户缩放到的最小比例
+ maximum-scale - 允许用户缩放到的最大比例
+ user-scalable - 用户是否可以手动缩放
+ device-width  - 是设备宽度
+2:  <input  ng-model='gretting.text'/>   $scope.gretting={text:"Hello!AngularLearner"}
+注明：这是数据绑定的典型范例，这一机制同样适用于服务器端->在控制器中，向服务器发出一次请求，获取响应，然后把$scope.gretting.text
+设置为服务器端所返回的内容，Angular会自动更新为所获取的值
+3:appctrl.controller('WwwhomeCtrl', function($scope, $rootScope,$location, $log) {
+注明:Anguar的依赖注入
+}
+4:$scope.items.splice(index,1)---> arrayObject.splice(index,howmany,item1,.....,itemX)
+注明：splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素
+arr.splice(2,1,"William")删除从 index 2 ("arr[2]") 开始的1个元素，并添加一个新元素 ("William") 来替代被删除的元素：
+5:  <a ng-href="#/tab/jump"><img ng-src="res/img/xiao.png"></a> 跳转页面
+
+
+

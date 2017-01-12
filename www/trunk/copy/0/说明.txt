@@ -1,0 +1,26 @@
+这里指的是生成热更文件之前
+
+复制顺序
+app 安卓苹果APP
+app_android/app_ios 所有的安卓/所有的苹果
+android/android_b/ios/ios_b 安卓会员/安卓医生/苹果会员/苹果医生
+
+其它：
+dev 开发
+online_trunk 线上服务器（微信版）
+
+安卓市场升级和硬件升级
+修改config.xml: version="1.2.4.7+1"  android-versionCode="23+1"
+version=rjs/app.js 中的 var h5ver   如：version="1.2.4.3"
+copy\1\app_android\www\js\conf_app.js 中的 _ClientInfo.ver 加1后，(硬件升级)
+android-versionCode=copy\1\app_android\www\js\conf_app.js 中的 _ClientInfo.ver 如：android-versionCode="22"
+因此，
+
+一次市场/硬件升级发布，修改4/3个文件：
+copy\0\android\config.xml;(市场和硬件升级) 中的软版本号和硬版本号
+copy\0\android_b\config.xml;(市场和硬件升级) 中的软版本号和硬版本号
+rjs\app.js(市场和硬件升级) 中的软版本号
+copy\1\app_android\www\js\conf_app.js;(硬件升级) 中的硬版本号
+
+纯热更只要改1个文件
+rjs\app.js(市场和硬件升级) 中的软版本号

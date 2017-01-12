@@ -1,0 +1,45 @@
+<!--Wwwhome，首页配置详细信息-->
+<ion-view xmlns="http://www.w3.org/1999/html">
+  <ion-content overflow-scroll="true">
+    <br >
+      <input  ng-model='gretting.text'/>
+      <div ng-bind="gretting.text" >
+      </div></br>
+      <div ng-repeat='obj in items'>
+        <span ng-bind="title"></span></br>
+        <span >{{content}}</span></br>
+        <span >{{messages.text}}</span></br>
+          <button ng-click="insertTxt()">增加</button></br>
+       <span>商品名称：{{obj.title}}</span></br>
+       数量：<input ng-model='obj.quantity'/></br>
+       <span>单价：{{obj.price|currency}}</span></br>
+       <!--<span>总价：{{obj.price * obj.quantity |currency}}</span></br>-->
+          <from >
+              <input type="checkbox"   checked="checked"   >
+              <input type="checkbox"  ng-model="obj.checkedIt">
+          </from>
+          <from >
+              <button ng-click="add1()">结算</button>
+              <input  ng-change="need" ng-model="obj.result" >
+          </from>
+       <button ng-click="remove($index)">删除</button>
+          </div>
+   <div>
+       <button ng-click="toggleMenu()">显示</button>
+       <div ng-show="menuState.show">
+           显示|隐藏
+       </div>
+   </div>
+          <div  ng-class="home" >引用样式1</div><br/>
+      <select  ng-model="home">
+          <option value="" ng-selected="true">请选择</option>
+          <option value="sky" >天空蓝  </option>
+          <option value="tomato" >天空红 </option>
+      </select>
+          <div  ng-style='isCs' >引用样式2</div><br/>
+    </div>
+
+      <a ng-href="#/tab/jump"><img ng-src="res/img/xiao.png"></a>
+  </ion-content>
+</ion-view>
+

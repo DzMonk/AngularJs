@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">        <!---ng-app 模块名称设定-->
+<head>
+    <meta charset="utf-8">   <!--字符编码集为UTF-8 -->
+    <script src="https://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script><!--加载angular.Js-->
+
+
+</head>
+<body ng-controller="code1Controller"> <!-- 定义控制器-->
+
+{{ message.text}};
+
+<form ng-submit="requestFunding()">
+    Starting:<input  ng-change="computerneed()" ng-model="starting">
+    Recommendation:{{need}}<br>
+    <button ng-click="resert()">重置</button>
+    <input type="submit">
+</form>
+
+
+
+
+
+<script>
+    var myAPPModule=angular.module('myApp', []);<!--创建一个模块 -->
+    myAPPModule.controller('code1Controller',function($scope){  <!-- 控制器函数‘textController'传递给模块-->
+        // 建立一个对象，赋予key value值
+        var message={};
+        $scope.message={text:'你好，小伙子'};
+
+        $scope.starting=0;
+        //      ng-change事件
+        $scope.computerneed=function(){
+
+            $scope.need=$scope.starting*10;
+        }
+        //    ng-subit 事件
+        $scope.requestFunding=function(){
+            if($scope.need==''|| $scope.need==null){
+                $scope.need="您提交有误";
+            }
+            else{
+                window.alert($scope.need);
+            }
+        }
+        //    ng-resert 事件
+        $scope.resert=function(){
+            $scope.starting=0;
+            $scope.need='0';
+
+        }
+
+    });
+</script>
+</body>
+</html>
+
+
+

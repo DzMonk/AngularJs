@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="hashmap.js"></script>
+</head>
+<body>
+<script>
+    function dwn(str){
+        document.write(str +"</br>");
+    }
+
+    var hashMap=new HashMap();
+    hashMap.clear();
+    hashMap.put('valueOf','valueOf');
+    hashMap.put('constructor','constructor');
+    hashMap.put('toString','toString');
+    hashMap.put('key1','12345');
+    hashMap.put('key2','123456');
+    hashMap.put('key3',1234567);
+    hashMap.put('key4','12345678');
+    hashMap.put('key4','123456789');
+
+    dwn(hashMap.size());
+    hashMap.remove('toString');
+    dwn(hashMap.keySet());
+    dwn(hashMap.toString());
+    dwn(hashMap.entrySet());
+    dwn(hashMap.values());
+    dwn(hashMap.get('key4'));
+    dwn(hashMap.remove('key4'));
+    dwn(hashMap.get('key4'));
+</script>
+</body>
+</html>

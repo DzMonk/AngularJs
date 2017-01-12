@@ -1,0 +1,22 @@
+<ion-tabs class="tabs-icon-top tabs-positie tabs-color-positive {{hideTabs}}" >
+
+	<ion-tab title="首页" icon-off="ion-a-home-outline" icon-on="ion-a-home-copy" ng-click ="nowtabs('A')">
+		<ion-nav-view name="tab-a"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="分类" icon-off="ion-a-chatboxes-outline" icon-on="ion-a-chatboxes-copy"  ng-click ="nowtabs('B')">
+		<ion-nav-view name="tab-b"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="购物车" icon-off="ion-a-cart-outline" icon-on="ion-a-cart-copy"  ng-click ="nowtabs('C')">
+		<ion-nav-view name="tab-c"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab title="我的" icon-off="ion-a-person-outline" icon-on="ion-a-person-copy"  ng-click ="nowtabs('D')">
+		<ion-nav-view name="tab-d"></ion-nav-view>
+	</ion-tab>
+
+	<ion-tab hidden="true">
+		<ion-nav-view name="tab-0"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>
